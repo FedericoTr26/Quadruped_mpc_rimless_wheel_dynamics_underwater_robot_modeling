@@ -6,11 +6,11 @@
 
 The report analyzes buoyancy, added mass, hydrodynamic damping, and current models for underwater robots. Two MATLAB studies explore legged locomotion using model predictive control (MPC) on a quadruped and hybrid dynamics on a passive rimless wheel.
 
-## My contribution
+## Approach
 
-- Integrated the supplied qpSWIFT solver into the Panther simulator's MPC loop to compute contact-force updates at each step. Extended the animation script to export comparison plots.
-- Compared trot, bound, pacing, gallop, trot-run, and crawl across changes in mass, ground friction, and target speed. Analyzed velocity tracking, body angular motion, and vertical ground reaction forces.
-- Used the supplied rimless-wheel simulator to compare initial angular velocities and changes in leg length, inter-leg angle, and slope. Interpreted the results using time histories and phase portraits.
+- The Panther simulator's MPC loop was extended with the supplied qpSWIFT solver to compute contact-force updates at each step. The animation script was extended to export comparison plots.
+- The gait comparison covered trot, bound, pacing, gallop, trot-run, and crawl across changes in mass, ground friction, and target speed. The analysis examined velocity tracking, body angular motion, and vertical ground reaction forces.
+- The supplied rimless-wheel simulator was used to compare initial angular velocities and changes in leg length, inter-leg angle, and slope. The analysis used time histories and phase portraits to interpret the results.
 
 ## Tools
 
@@ -18,7 +18,7 @@ MATLAB, qpSWIFT, and event-driven integration with `ode45`.
 
 ## Run
 
-- **Task 3 · Quadruped.** Add the qpSWIFT MATLAB interface for your platform to the MATLAB path. Run `MAIN` from `Task 3`. To match the trot shown below, set `gait = 0` and `p.vel_d = [0.5; 0]`. The nominal mass and friction are set in `fcns/get_params.m`. Set `p.flag_movie = 0` to turn off video recording. The summary plots are exported to `figures` with either setting. [qpSWIFT MATLAB interface](https://github.com/qpSWIFT/qpSWIFT/tree/main/matlab)
+- **Task 3 · Quadruped.** Add the qpSWIFT MATLAB interface for the target platform to the MATLAB path. Run `MAIN` from `Task 3`. To match the trot shown below, set `gait = 0` and `p.vel_d = [0.5; 0]`. The nominal mass and friction are set in `fcns/get_params.m`. Set `p.flag_movie = 0` to turn off video recording. The summary plots are exported to `figures` with either setting. [qpSWIFT MATLAB interface](https://github.com/qpSWIFT/qpSWIFT/tree/main/matlab)
 - **Task 4 · Rimless wheel.** Run `rimless_wheel` from `Task 4`. Set `thetadot0 = 1.8` to reproduce the phase portrait below.
 
 ## Key results
